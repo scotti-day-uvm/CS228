@@ -31,8 +31,10 @@ function HandleFrame(frame){
 }
 
 function HandleHand(hand){
-    index = hand.indexFinger;
-    HandleFinger(index);
+    fingers = hand.fingers;
+    for (var i=0; i < fingers.length; i++){
+        HandleFinger(fingers[i]);
+    }
 }
 
 function HandleFinger(finger){
@@ -57,3 +59,4 @@ function HandleFinger(finger){
     circle(NewX,(height/2) - (-NewY),100);
 
 }
+
